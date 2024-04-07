@@ -1,6 +1,6 @@
 'use client'
 
-import { Ref } from "react";
+// import { Ref } from "react";
 
 export function MiniaturaImagen({
     // srcImg,
@@ -12,7 +12,8 @@ export function MiniaturaImagen({
     children: React.ReactNode;
     // onClose: React.EventHandler<Event>;
 },
-ref : Ref<String>) {
+// ref : Ref<String>
+) {
     return (
         <button className='hover:w-[300px] '>
             {children}

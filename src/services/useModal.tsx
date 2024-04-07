@@ -1,5 +1,5 @@
 'use client'
-import { useRef, useState } from 'react';
+import { useRef } from 'react';
 
 type rePropsModal = {
     ref: React.RefObject<HTMLDialogElement>;

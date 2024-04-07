@@ -1,6 +1,6 @@
 import clsx from 'clsx';
 import { Button } from '@/src/ui/button';
-import { useState } from 'react';
+// import { useState } from 'react';
 import { Modal } from '@/src/ui/dialogo'
 import { useModal } from '@/src/services/useModal';
 
@@ -40,7 +40,7 @@ export function PreviewImagen ({
     children: React.ReactNode;
 }) {
     const { ref, onOpen, onClose } = useModal();
-    const [isHover, setHover] = useState(false);
+    // const [isHover, setHover] = useState(false);
 
     return (
         <div className='py-4 flex flex-col items-center '>

@@ -1,10 +1,8 @@
 'use client'
-import Image from 'next/image';
-import { Images } from '@/assets/commonImages';
-import { useModal } from '@/src/services/useModal';
-import { PreviewImagen } from '@/src/ui/tareas/botones';
+// import { useModal } from '@/src/services/useModal';
+// import { PreviewImagen } from '@/src/ui/tareas/botones';
 import clsx from 'clsx';
-import styles from '@/src/ui/curriculum.module.css';
+// import styles from '@/src/ui/curriculum.module.css';
 import { forwardRef } from 'react';
 
 type propsModal = {
