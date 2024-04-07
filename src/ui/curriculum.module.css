@@ -1,0 +1,45 @@
+.degradadoBorde {
+    --a: 10%;
+    --b: 20%;
+    --c: 70%;
+    border-image: 
+    linear-gradient(
+        180deg,
+        #886f49 var(--a), 
+        #fff var(--b),
+        #1c300d var(--c)
+    )
+    30
+    / .6rem;
+    animation: reflejo auto linear forwards;
+    animation-timeline: view();
+    border-width: thick;
+}
+
+.blurImagePreview:hover {
+    webkit-filter: blur(4px) !important; /* Chrome, Safari, Opera */
+    filter: blur(4px) !important; 
+}
+
+.shadowBoxInner {
+    box-shadow: inset 23vmin 23vmin 10vmin -16vmin #F8B841;
+}
+
+@media (min-width: 360px) and (max-width: 720px) {
+    .shadowBoxInner {
+        box-shadow: inset 40vmin 23vmin 20vmin -16vmin #F8B841;
+    }
+}
+
+@media (min-width: 720px) and (max-width: 1920px) {
+    .textoTamano{
+        font-size: 0.6rem;
+    }
+}
+
+@media (min-width: 1440px) and (max-width: 1920px) {
+    .shadowBoxInner {
+        box-shadow: inset 28vmin 25vmin 10vmin -30vmin #F8B841;
+        font-weight: bold;
+    }
+ }
