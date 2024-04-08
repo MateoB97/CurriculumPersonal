@@ -36,7 +36,7 @@ export default function Curriculum() {
                 'overflow-y-scroll font-mono brightness-120  contrast-100 h-full inset-0 w-full',
             )}
             style={{
-                backgroundImage: 'url(/curriculum/nubesNaranjas.png)',
+                backgroundImage: 'url(CurriculumPersonal/curriculum/cieloArrebolesVert.png)',
                 backgroundSize: 'cover',
                 backgroundRepeat: 'no-repeat'
             }}    
