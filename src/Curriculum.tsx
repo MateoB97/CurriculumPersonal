@@ -14,9 +14,6 @@ import {
 } from '@/src/ui/titulos';
 import clsx from 'clsx';
 import { Tarjeta } from '@/src/ui/tarjetas';
-// import { MiniaturaImagen } from '@/src/ui/miniaturas';
-// import { OpcionalesImg } from '@/src/ui/imagenes';
-// import { Modal } from '@/src/ui/dialogo';
 import { PreviewImagen } from '@/src/ui/botones';
 
 import ImgPerfil from './assets/curriculum/Perfil1_1x1_big.jpg';
