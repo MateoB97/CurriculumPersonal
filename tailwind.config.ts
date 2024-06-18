@@ -38,7 +38,16 @@ export default {
       '4xl': '2.441rem',
       '5xl': '3.052rem',
     },
+    fontFamily: {
+      sans: ["'Shantell Sans'", '"Josefin Sans"', 'Inter', 'system-ui', 'Avenir', 'Helvetica', 'Arial', 'sans-serif'],
+      serif: ['"Josefin Slab"', 'Georgia', 'Cambria', '"Times New Roman"', 'Times', 'serif'],
+      mono: ['Menlo', 'Monaco', 'Consolas', 'Liberation Mono', 'Courier New', 'monospace'],
+    },
     extend: {
+
+      backgroundImage: {
+        'nubes-pattern': "url('assets/nubesNaranjas.png')",
+      },
       boxShadow: {
         '0deg-md': 'inset 20vmin 0vmin 20vmin -8vmin',
         '45deg-md': '10vmin 4vmin 10vmin -8vmin',

@@ -1,11 +1,18 @@
 {
   "compilerOptions": {
     "target": "ES2020",
+    // "typeRoots": [
+    //   "./src/typings",
+    //   "./node_modules/@types"
+    // ],
     "useDefineForClassFields": true,
-    "lib": ["ES2020", "DOM", "DOM.Iterable"],
+    "lib": [
+      "ES2020",
+      "DOM",
+      "DOM.Iterable"
+    ],
     "module": "ESNext",
     "skipLibCheck": true,
-
     /* Bundler mode */
     "moduleResolution": "bundler",
     "allowImportingTsExtensions": true,
@@ -13,7 +20,6 @@
     "isolatedModules": true,
     "noEmit": true,
     "jsx": "react-jsx",
-
     /* Linting */
     "strict": true,
     "noUnusedLocals": true,
@@ -21,11 +27,25 @@
     "noFallthroughCasesInSwitch": true,
     "baseUrl": ".",
     "paths": {
-      "@/src/*": ["src/*"],
-      "@/public/*": ["public/*"],
-      "@/assets/*": ["src/assets/*"]
+      "@/src/*": [
+        "src/*"
+      ],
+      "@/public/*": [
+        "public/*"
+      ],
+      "@/assets/*": [
+        "src/assets/*"
+      ]
     }
   },
-  "include": ["src"],
-  "references": [{ "path": "./tsconfig.node.json" }]
+  "include": [
+    "src/computed-styles/screen-calculation.ts",
+    "./src/typings/**/*",
+    "src"
+  ],
+  "references": [
+    {
+      "path": "./tsconfig.node.json"
+    }
+  ]
 }
