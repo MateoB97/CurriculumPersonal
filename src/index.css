@@ -120,26 +120,27 @@ input[type="datetime-local"] {
   }
 }
 
-.imagenPerfil {
-  box-shadow: inset 23cqmin 23cqmin 10cqmin -16cqmin #F8B841;
-}
+/* .imagenPerfil:hover::after { */
+  /* box-shadow: inset 23vmin 23vmin 10vmin -16vmin #F8B841; */
+  /* box-shadow: inset 0px 0px 20px 0 #F8B841; */
+/* } */
 
 .contPerfil {
   container: contPerfil / inline-size;
 }
 
 .contTrajeta {
-  container: contTrajeta / inline-size;
+  container: contTarjeta / inline-size;
 }
 
-@container contTrajeta (max-width: 1366px) {
+@container contTarjeta (max-width: 1366px) {
   .imagenPerfil {
     width: 20cqw;
     height: 20cqh;
   }
 }
 
-@container contTrajeta (min-width: 500px) {
+@container contTarjeta (min-width: 500px) {
   .imagenPerfil {
     width: 30cqw;
     height: 30cqh;

@@ -9,7 +9,7 @@ export default {
       ultrawide:"2600px"
     },
     fontSize: {
-      'h1_cv': ['1.6rem', {
+      'h1_cv': ['1.6rem !important', {
         lineHeight: '2rem',
         letterSpacing: '-0.04em',
         fontWeight: '500',
@@ -37,6 +37,7 @@ export default {
       '3xl': '1.953rem',
       '4xl': '2.441rem',
       '5xl': '3.052rem',
+      display: '15vmin'
     },
     fontFamily: {
       sans: ["'Shantell Sans'", '"Josefin Sans"', 'Inter', 'system-ui', 'Avenir', 'Helvetica', 'Arial', 'sans-serif'],
