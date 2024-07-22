@@ -3,8 +3,8 @@ import { useRef/* , useState */ } from 'react';
 
 type rePropsModal = {
     REF_MODAL: React.RefObject<HTMLDialogElement>;
-    onOpen: React.EventHandler<{}>;
-    onClose: React.EventHandler<{}>;
+    onOpen: React.EventHandler<React.SyntheticEvent<unknown, Event>>;
+    onClose: React.EventHandler<React.SyntheticEvent<unknown, Event>>;
 }
 
 export function useModal(): rePropsModal {
@@ -12,10 +12,12 @@ export function useModal(): rePropsModal {
 
     const onOpen: rePropsModal['onOpen'] =
             (e) => {
+                e.preventDefault();
                 REF_MODAL.current!.showModal();
             }
     const onClose: rePropsModal['onClose'] =
             (e) => {
+                e.preventDefault();
                 setTimeout(() => {
                     REF_MODAL.current!.close();
                 }, 400);

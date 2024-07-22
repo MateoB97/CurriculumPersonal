@@ -3,8 +3,8 @@ import { Button } from "@/src/ui/button";
 import { Titulo } from "./typografia";
 import { Texto } from "./typografia";
 // import { useState } from 'react';
-import { Modal } from "@/src/ui/dialogo";
-import { useModal } from "@/src/services/useModal";
+// import { Modal } from "@/src/ui/dialogo";
+// import { useModal } from "@/src/services/useModal";
 // import { ComponentSize } from "@/src/services/useUiCalculate";
 import { useRef, useCallback, useEffect/* , useState */ } from 'react';
 // import { useCalculateDimensions, ComponentSize } from "@/src/services/useUiCalculate";
@@ -37,21 +37,19 @@ export function AccionBoton() {
   return <button>Accion</button>;
 }
 
-export function PreviewImagen({ children }: { children: React.ReactNode }) {
-  const { ref, onOpen, onClose } = useModal();
-  // const [isHover, setHover] = useState(false);
+// export function PreviewImagen({ children }: { children: React.ReactNode }) {
+//   const { REF_MODAL, onOpen, onClose } = useModal();
+//   // const [isHover, setHover] = useState(false);
 
-  return (
-    <div className="py-4 flex flex-col items-center aspect-square">
-      <button className={clsx("w-[60%] hover:blur-sm")} onClick={onOpen}>
-        {children}
-      </button>
-      <Modal ref={ref} onClose={onClose}>
-        {children}
-      </Modal>
-    </div>
-  );
-}
+//   return (
+//     <div className="py-4 flex flex-col items-center aspect-square">
+//       <button className={clsx("w-[60%] hover:blur-sm")} onClick={onOpen}>
+//         {children}
+//       </button>
+//       <Modal ref={REF_MODAL} onClose={onClose} />
+//     </div>
+//   );
+// }
 
 export function CarruselFlechas({
   posiciones,
