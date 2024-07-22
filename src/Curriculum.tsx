@@ -2,13 +2,13 @@ import "./output.css";
 // import styles from "@/src/ui/curriculum.module.css";
 
 import { NavegacionBoton } from "@/src/ui/botones";
-import { Contacto, ImagenCoorporativo, AsideNav, Contenido, Navegacion, Header, Idiomas } from "@/src/ui/bloquesContenido";
+import { Contacto, ImagenCoorporativo, AsideNav, Contenido, Navegacion, Header, Idiomas } from "@/src/ui/bloques-contenido";
 import { Outlet } from "react-router-dom";
 
 export default function Curriculum() {
   return (
     <section
-      className="laptop:max-ultrawide:mt-[4%] mx-[2%] mb-[8%] flex flex-nowrap gap-x-[2%]"
+      className="laptop:max-ultrawide:mt-[3%] mt-[2%] mx-[2%] mb-[8%] flex flex-nowrap gap-x-[2%]"
     >
       <Header>
         hola

@@ -6,7 +6,7 @@ export default {
       tablet: '720px',
       laptop: '1366px',
       desktop: '1921px',
-      ultrawide:"2600px"
+      ultrawide:"2800px"
     },
     fontSize: {
       'h1_cv': ['1.6rem !important', {

@@ -5,7 +5,7 @@ import {
   createBrowserRouter,
   RouterProvider,
 } from "react-router-dom";
-import { Bienvenida, PerfilProfesional, Logros, ExperienciaLaboral, ProyectosPersonales, Habilidades } from './ui/bloquesContenido.tsx';
+import { Bienvenida, PerfilProfesional, Logros, ExperienciaLaboral, ProyectosPersonales, Habilidades } from './ui/bloques-contenido.tsx';
 
 const router = createBrowserRouter([
   {

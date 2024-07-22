@@ -4,9 +4,9 @@ import {
   Texto
 } from "@/src/ui/typografia";
 import { Link } from "react-router-dom";
-import { PreviewImagen, EnlaceContacto } from "@/src/ui/botones";
+import { EnlaceContacto } from "@/src/ui/botones";
 
-import { Tarjeta } from "@/src/ui/tarjetas";
+import { ListaLogros } from "@/src/ui/tarjetas";
 
 import ImgPerfil from "../assets/curriculum/Perfil1_1x1_big.jpg";
 import {
@@ -17,12 +17,6 @@ import * as LinkedinLogo from './assets/logos/outline/linkedin.tsx';
 // import * as MetaLogo from './assets/logos/outline/meta.tsx';
 import * as GithubLogo from './assets/logos/outline/github-mark.tsx';
 
-import ActaAI from "../assets/curriculum/actaAI900.png";
-import ActaProg from "../assets/curriculum/actaProgramacion.png";
-import ActaMusica from "../assets/curriculum/actaMusica.jpeg";
-import ActaMPersonal from "../assets/curriculum/actaMarcaPersonal.png";
-import ActaDP from "../assets/curriculum/actaDP900.png";
-import ActaRedes from "../assets/curriculum/actaRedes.png";
 
 export function Contenido({
   children
@@ -37,7 +31,7 @@ export function Contenido({
       'bg-slate-50/50 backdrop-blur border-white border-4 rounded-3xl',
       'tablet:sticky tablet:top-5 tablet:max-ultrawide:mt-0',
       'contTrajeta',
-      'flex flex-col laptop:max-ultrawide:shrink laptop:max-ultrawide:grow laptop:max-ultrawide:basis-[100%]'
+      'flex flex-col tablet:max-ultrawide:shrink tablet:max-ultrawide:grow tablet:max-ultrawide:basis-[100%]'
     )}>
       {children}
     </section>
@@ -53,7 +47,7 @@ export function Header({
     <header className={clsx(
       'h-full w-[26%] flex min-h-[90px] min-w-[100vw] relative',
       'bg-slate-50/50 backdrop-blur border-white border-4 rounded-3xl',
-      'grow-0 laptop:max-ultrawide:hidden'
+      'grow-0 tablet:max-ultrawide:hidden'
     )}>
       {children}
     </header>
@@ -67,9 +61,9 @@ export function AsideNav({
 }) {
   return (
     <aside className={clsx(
-      'laptop:max-ultrawide:w-[26%] laptop:max-ultrawide:h-[90vh] laptop:max-ultrawide:flex laptop:max-ultrawide:flex-col min-w-[360px]',
+      'tablet:max-ultrawide:w-[26%] tablet:max-ultrawide:h-[90vh] tablet:max-ultrawide:flex tablet:max-ultrawide:flex-col min-w-[360px]',
       'bg-slate-50/50 backdrop-blur border-white border-4 rounded-3xl',
-      'laptop:max-ultrawide:grow-0 px-4'
+      'tablet:max-ultrawide:grow-0 px-4'
     )}>
       {children}
     </aside>
@@ -354,137 +348,25 @@ export function Habilidades() {
 }
 
 export function Logros() {
-  return (
 
-    <Texto >
-      <ul>
-        <li>
-          <Tarjeta title="Estudios Tecnólogicos">
-            <Texto>
-              <Titulo>SENA convenio IUSH</Titulo>
-              <Texto className="my-4">
-                <Titulo>Técnico en programación de software</Titulo>
-                <br />
-                <p>
-                  Graduación: <br />
-                  12/Agosto/2021 <i>(Etapa lectiva)</i> <br />
-                  12/Febrero/2022{" "}
-                  <i>
-                    (Prácticas profesionales – Super Carnes JH S.A.S)
-                  </i>
-                </p>
-                <PreviewImagen>
-                  <figure className="py-4">
-                    <img
-                      src={ActaProg}
-                      alt="Imagen de diploma técnica en programación de software"
-                    />
-                    <figcaption className="text-center">
-                      Diploma técnico en programación de software
-                    </figcaption>
-                  </figure>
-                </PreviewImagen>
-              </Texto>
-              <Titulo>Escuela superior tecnológica de artes Débora Arango</Titulo>
-              <Texto className="my-4">
-                <Titulo>
-                  Tecnólogo en gestión y ejecución instrumental para las
-                  prácticas musicales
-                </Titulo>
-                <br />
-                <p>
-                  Graduación: <br />
-                  <i>27/Junio/2019</i>
-                </p>
-                <PreviewImagen>
-                  <figure className="py-4">
-                    <img
-                      src={ActaMusica}
-                      alt="Imagen de diploma tecnología en gestión y ejecución musical"
-                    />
-                    <figcaption className="text-center">
-                      Diploma tecnólogo en gestión y ejecución musical
-                    </figcaption>
-                  </figure>
-                </PreviewImagen>
-              </Texto>
-            </Texto>
-          </Tarjeta>
-        </li>
-        <li>
-          <Tarjeta title="Cursos">
-            <Texto>
-              <Titulo>CURSO DE MARCA PERSONAL</Titulo>
-              <Texto className="my-4">
-                <p>
-                  Fecha: 26/11/2018 (Aprobado) <br />
-                  https://platzi.com/@Mateo1030 <br />
-                  Código:6f53a5f4-d99f-4054-b5e2-f96516969951
-                </p>
-                <PreviewImagen>
-                  <figure className="py-4">
-                    <img
-                      src={ActaMPersonal}
-                      alt="Imagen de diploma gestion de marca personal"
-                    />
-                    <figcaption className="text-center"></figcaption>
-                  </figure>
-                </PreviewImagen>
-              </Texto>
-              <Titulo>
-                DP-900: MICROSOFT AZURE DATA FUNDAMENTALS{" "}
-              </Titulo>
-              <Texto className="my-4">
-                <p>
-                  Fecha: 31/12/2021 <br />
-                </p>
-                <PreviewImagen>
-                  <figure className="py-4">
-                    <img
-                      src={ActaDP}
-                      alt="Imagen de diploma ciencia de datos"
-                    />
-                    <figcaption className="text-center"></figcaption>
-                  </figure>
-                </PreviewImagen>
-              </Texto>
-              <Titulo>AI-900: MICROSOFT AZURE AI FUNDAMENTALS </Titulo>
-              <Texto className="my-4">
-                <p>
-                  Fecha: 31/12/2021 <br />
-                </p>
-                <PreviewImagen>
-                  <figure className="py-4">
-                    <img
-                      src={ActaAI}
-                      alt="Imagen de diploma inteligencia artificial"
-                    />
-                    <figcaption className="text-center"></figcaption>
-                  </figure>
-                </PreviewImagen>
-              </Texto>
-              <Titulo>CURSO DE REDES Y SEGURIDAD</Titulo>
-              <Texto className="my-4">
-                <p>
-                  Fecha: 11/11/2022 <br />
-                  http://certificados.sena.edu.co, bajo el número <br />
-                  9402002659825CC1020482382C.
-                </p>
-                <PreviewImagen>
-                  <figure className="py-4">
-                    <img
-                      src={ActaRedes}
-                      alt="Imagen de diploma redes y seguridad"
-                    />
-                    <figcaption className="text-center"></figcaption>
-                  </figure>
-                </PreviewImagen>
-              </Texto>
-            </Texto>
-          </Tarjeta>
-        </li>
-      </ul>
-    </Texto>
+  const SECCIONES: string[] = ['tecnologico', 'cursos'];
+  return (
+    <article
+      className='flex flex-col h-full'
+    >
+      {SECCIONES.map((seccion, index) => (
+
+        <section key={index} className="flex flex-col w-full max-w-full h-[45%] max-h-[50%] laptop:px-3 laptop:py-4 px-2 py-3 desktop:max-w-7xl desktop:px-7">
+          <Texto className='grow-0'>
+            <Titulo>Grado Tecnologico</Titulo>
+            <hr className="mb-4" />
+          </Texto>
+
+          <ListaLogros sectionName={seccion} />
+        </section>
+      ))}
+
+    </article >
   );
 }
 
@@ -492,7 +374,7 @@ export function Bienvenida() {
   return (
     <div className='flex flex-col justify-center items-center h-full'>
 
-      <p className='font-serif text-display text-center block h-[15vmin]'>Bienvenido</p>
+      <p className='font-serif text-display text-center block h-[15vmin]'>Bienvenido(a)</p>
     </div>
 
   )

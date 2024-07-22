@@ -5,7 +5,9 @@ import { Texto } from "./typografia";
 // import { useState } from 'react';
 import { Modal } from "@/src/ui/dialogo";
 import { useModal } from "@/src/services/useModal";
-// import { useState } from "react";
+// import { ComponentSize } from "@/src/services/useUiCalculate";
+import { useRef, useCallback, useEffect/* , useState */ } from 'react';
+// import { useCalculateDimensions, ComponentSize } from "@/src/services/useUiCalculate";
 
 import { Link, To } from "react-router-dom";
 
@@ -40,8 +42,8 @@ export function PreviewImagen({ children }: { children: React.ReactNode }) {
   // const [isHover, setHover] = useState(false);
 
   return (
-    <div className="py-4 flex flex-col items-center ">
-      <button className={clsx("w-[80%] hover:blur-sm")} onClick={onOpen}>
+    <div className="py-4 flex flex-col items-center aspect-square">
+      <button className={clsx("w-[60%] hover:blur-sm")} onClick={onOpen}>
         {children}
       </button>
       <Modal ref={ref} onClose={onClose}>
@@ -51,33 +53,78 @@ export function PreviewImagen({ children }: { children: React.ReactNode }) {
   );
 }
 
-// export function CarruselFlechas({
-//   posiciones,
-//   // calcPosiciones
-// }: {
-//   posiciones: any;
-//   // calcPosiciones?: any;
-// }) {
-//   return (
-//     <div className={clsx(
-//       'relative top-[45%] left-3 z-10 w-[95vw]',
-//       'flex flex-row justify-between items-center',
-//     )}>
-//       {[posiciones.previo, posiciones.siguiente].map((pos, index) => (
-//         <a
-//           key={index}
-//           className={clsx(
-//             "inline-flex w-[40px] h-[40px]",
-//             "bg-white rounded-full no-underline items-center justify-center relative ml-2",
-//             "focus:bg-gray-400",
-//           )}
-//           href={pos}
+export function CarruselFlechas({
+  posiciones,
+  parentElem
+}: {
+  posiciones?: {
+    siguiente: string;
+    anterior: string;
+  };
+  parentElem: () => HTMLDivElement;
+}) {
+  const REF_CHILD = useRef({} as HTMLDivElement);
+  const getChildRef = useCallback(() => {
+    const rect = REF_CHILD.current;
+    return rect;
+  }, [REF_CHILD]);
+  // useCalculateDimensions(parentElem(), getChildRef(), actionReSize);
 
-//         ></a>
-//       ))}
-//     </div>
-//   );
-// }
+  useEffect(() => {
+    if (parentElem()) {
+      const REZISE_OBSERVER = new ResizeObserver((obsEvent) => {
+        const PARENT_DIMENSIONS = {
+          width: obsEvent[0].contentBoxSize[0].inlineSize,
+          height: obsEvent[0].contentBoxSize[0].blockSize,
+        };
+        console.log(PARENT_DIMENSIONS);
+        getChildRef().style.height = `${PARENT_DIMENSIONS.height}px`
+        getChildRef().style.width = `${PARENT_DIMENSIONS.width}px`
+      });
+      REZISE_OBSERVER.observe(parentElem());
+      return () => {
+        REZISE_OBSERVER.disconnect();
+      }
+    }
+  });
+  // function actionReSize<A extends ResizeObserverEntry, R extends Element>(obsEvent: A, childRef: R): void {
+  //   const PARENT_DIMENSIONS = {
+  //     width: obsEvent.contentBoxSize[0].inlineSize,
+  //     height: obsEvent.contentBoxSize[0].blockSize,
+  //   };
+  //   childRef.style = `height: ${PARENT_DIMENSIONS.height}; width: ${PARENT_DIMENSIONS.width}`
+  // }
+
+  const posObj = { ...posiciones }
+
+  return (
+    <div className={clsx(
+      'absolute',
+      'flex flex-row justify-between items-center'
+    )}
+      ref={REF_CHILD}
+    >
+      <a
+        className={clsx(
+          "inline-flex w-[40px] h-[40px]",
+          "bg-white rounded-full no-underline items-center justify-center relative ml-2",
+          "focus:bg-gray-400",
+        )}
+        href={posObj!.siguiente}
+
+      ></a>
+      <a
+        className={clsx(
+          "inline-flex w-[40px] h-[40px]",
+          "bg-white rounded-full no-underline items-center justify-center relative ml-2",
+          "focus:bg-gray-400",
+        )}
+        href={posObj!.siguiente}
+
+      ></a>
+    </div>
+  );
+}
 
 export function NavegacionBoton({
   children,
@@ -101,7 +148,7 @@ export function NavegacionBoton({
           "hover:text-[#3B55DF]",
           'text-h1_cv'
         )}
-        to={href}
+          to={href}
         >
           {children}
         </Link>
@@ -134,4 +181,28 @@ export function EnlaceContacto({
       </Link>
     </Texto>
   )
+}
+
+export function InfoExpandida({
+  title,
+  children
+}: {
+  title: string;
+  children?: React.ReactNode;
+}) {
+  return (
+    <section
+      id="controles"
+      className="rounded-lg bg-orange-custom_1 border-2 border-green-custom_1 border-solid h-[min-content]
+      min-h-[min-content] mx-0 my-[0.6vh] sm:max-xl:mx-[1vw] sm:my-[1vh] xl:mx-0 sm:grow sm:shrink sm:max-xl:basis-[44vw] xl:basis-[30vw] 
+      m-tareas__item m-tareas__filtro"
+      data-name="controles -m">
+      <details className="p-[1%] m-section -desplegable">
+        <summary className="a-filtro__titulo">{title}</summary>
+        <section className="c-gestionTareas__contenido py-[2rem] px-[1.5rem]">
+          {children}
+        </section>
+      </details>
+    </section>
+  );
 }
